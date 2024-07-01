@@ -1,12 +1,44 @@
+import { useEffect, useState } from 'react'
 import './App.css'
-import config from './envImport/config';
+import { useDispatch } from 'react-redux';
+import authService from './appwrite/auth';
+import { login, logout } from "./store/authSlice"
+import { Header, Footer } from './components/index';
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  console.log(config.appwriteProjectID);
-  console.log(config.appwriteDatabaseID);
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    authService.getCurrentUser()
+    .then((userData) => {
+      if (userData) {
+        dispatch(login({userData}))
+      }else{
+        dispatch(logout())
+      }
+    })
+    .finally(() => setLoading(false));
+  },[])
+
+  if (loading) {
+    return <div>
+      Loading...
+    </div>
+  }
+
   return (
     <>
-      <h1>Blog with appwrite</h1>
+      <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+        <div className='w-full block'>
+            <Header />
+            <main> 
+              {/* <Outlet /> */}
+            </main>
+            <Footer />
+        </div>
+      </div>
     </>
   )
 }
