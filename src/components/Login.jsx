@@ -70,7 +70,6 @@ const login = async(data) => {
                         type= "password"
                         {...register("password", {
                             required: true,
-
                         })}
                         />
                         <Button type='submit' className='w-full'>Signin</Button>
