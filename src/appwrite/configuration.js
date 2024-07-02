@@ -29,7 +29,7 @@ export class Service{
                 }
             )
         } catch (error) {
-            console.error("Error in createPost:: ",error);
+            console.log("Error in createPost:: ",error);
         }
     }
 
@@ -47,7 +47,7 @@ export class Service{
                 }
             )
         } catch (error) {
-            console.error("Error in updatePost:: ", error);
+            console.log("Error in updatePost:: ", error);
         }
     }
 
