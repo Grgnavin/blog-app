@@ -3,11 +3,17 @@ import Footer from "./Footer/Footer";
 import container from './container/Container'
 import Logo from "./Logo";
 import LogoutBtn from "./Header/LogoutBtn";
+import Button from "./Button.jsx";
+import Input from "./Input.jsx";
+import Select from "./Select.jsx";
 
 export {
     Header,
     Footer,
     container,
     Logo,
-    LogoutBtn
+    LogoutBtn,
+    Button,
+    Input,
+    Select
 }
