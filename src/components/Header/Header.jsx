@@ -1,4 +1,4 @@
-import { LogoutBtn, Logo, container } from "../index"
+import { LogoutBtn, Logo, Container } from "../index"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -38,7 +38,7 @@ function Header() {
 
   return (
     <header className='py-3 shadow bg-gray-500'>
-      <container>
+      <Container>
         <nav className="flex">
           <div className="mr-4">
             <Link to={'/'}>
@@ -65,7 +65,7 @@ function Header() {
             )}
           </ul>
         </nav>
-      </container>
+      </Container>
     </header>
   )
 }
