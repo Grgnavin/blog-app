@@ -72,7 +72,7 @@ const login = async(data) => {
                             required: true,
                         })}
                         />
-                        <Button type='submit' className='w-full'>Signin</Button>
+                        <Button type='submit' className='w-full bg-blue-600'>Signin</Button>
                     </div>
                 </form>
             </div>
